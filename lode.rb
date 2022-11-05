@@ -5,20 +5,20 @@
 class Lode < Formula
   desc ""
   homepage "https://github.com/JamesBalazs/homebrew-tools"
-  version "0.5.3"
+  version "0.5.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.3/lode_0.5.3_Darwin_x86_64.tar.gz"
-      sha256 "2f51754d19b81cb63633a948822d4bb5e921f6a2c28bc0b15164eda0ed2eb878"
+    if Hardware::CPU.arm?
+      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.4/lode_0.5.4_Darwin_arm64.tar.gz"
+      sha256 "3889db4627f12567e6d87937940a03c6a42e834e34b86a08f525c55d43e0500a"
 
       def install
         bin.install "lode"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.3/lode_0.5.3_Darwin_arm64.tar.gz"
-      sha256 "ab351c195facdce6c0c3a81546709371ef2d569b20c8fb1945f69d852f625b49"
+    if Hardware::CPU.intel?
+      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.4/lode_0.5.4_Darwin_x86_64.tar.gz"
+      sha256 "d255d6e3cc31dacb72245cdc20a5899c50409ee5ad74fc49c2f26335fac7ca5f"
 
       def install
         bin.install "lode"
@@ -27,25 +27,25 @@ class Lode < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.3/lode_0.5.3_Linux_armv6.tar.gz"
-      sha256 "eeb904657a8d4a45bda8ca4c7dd5d24bede4801c7388cd98a7809784e414da1b"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.4/lode_0.5.4_Linux_arm64.tar.gz"
+      sha256 "d88160a2a54e1a20856714a4efe39d6827f0914fbb83149a2b686718e95b9164"
 
       def install
         bin.install "lode"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.3/lode_0.5.3_Linux_x86_64.tar.gz"
-      sha256 "c578665e7e184d853a0a50f2137fc50e22bce217a722177adbbc61aa93123889"
+      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.4/lode_0.5.4_Linux_x86_64.tar.gz"
+      sha256 "04ba5827635a04b6328bdd0a64fb1b982dd706a171dd27e2bf413c3592759265"
 
       def install
         bin.install "lode"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.3/lode_0.5.3_Linux_arm64.tar.gz"
-      sha256 "805c114efc67cd3b891908f920f4896375d8dc86ad884413805cc71ab8ef0cf6"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/JamesBalazs/lode/releases/download/v0.5.4/lode_0.5.4_Linux_armv6.tar.gz"
+      sha256 "c65c551e8ae64cb00d53f48b251077808a27a81f0b64140eb891ea6ea69d4adf"
 
       def install
         bin.install "lode"
